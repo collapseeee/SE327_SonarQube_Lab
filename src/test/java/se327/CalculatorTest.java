@@ -3,6 +3,7 @@ package se327;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
     @Test
@@ -27,5 +28,6 @@ class CalculatorTest {
      void testDivide() {
         Calculator calculator = new Calculator();
         assertEquals(2.0, calculator.divide(4, 2), 0.01);
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(2, 0));
     }
 }
